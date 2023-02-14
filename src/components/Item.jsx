@@ -6,33 +6,31 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import { shades } from "../theme";
 import { addToCart } from "../state";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
-
-const Item = ({ item, width }) => {
+const Item = ({ item}) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [count, setCount] = useState(1);
-  
+
   const [isHovered, setIsHovered] = useState(false);
   const {
     palette: { neutral },
   } = useTheme();
 
-  const { tags, variants, title, image } = item;
-//   const {
-//     data: {
-//       attributes: {
-//         formats: {
-//           medium: { url },
-//         },
-//       },
-//     },
-//   } = image;
+  const { tags, variants, title} = item;
+  //   const {
+  //     data: {
+  //       attributes: {
+  //         formats: {
+  //           medium: { url },
+  //         },
+  //       },
+  //     },
+  //   } = image;
 
   return (
-   
-    <Box width={width}>
+    <Box >
       <Box
         position="relative"
         onMouseOver={() => setIsHovered(true)}
@@ -91,7 +89,6 @@ const Item = ({ item, width }) => {
         <Typography fontWeight="bold">${variants[0].price}</Typography>
       </Box>
     </Box>
-
   );
 };
 

@@ -1,22 +1,21 @@
-
-
 import { useDispatch, useSelector } from "react-redux";
-import Jklog from '../logo/jklogo.png'
-import { Badge, Box, IconButton,Image, Typography } from "@mui/material";
+import Jklog from "../logo/jklogo.png";
+import { Badge, Box, IconButton} from "@mui/material";
+//import { Image, Typography } from "@mui/material";
 import {
   PersonOutline,
   ShoppingBagOutlined,
   MenuOutlined,
-  SearchOutlined,
 } from "@mui/icons-material";
+ //import { SearchOutlined,} from "@mui/icons-material";
 //import { useNavigate } from "react-router-dom";
-import { shades } from "../theme";
+//import { shades } from "../theme";
 import { setIsCartOpen } from "../state";
 import { useNavigate } from "react-router-dom";
 
 
 function Navbar() {
-   const navigate = useNavigate();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.cart);
 
@@ -32,6 +31,7 @@ function Navbar() {
       top="0"
       left="0"
       zIndex="1"
+     
     >
       <Box
         width="80%"
@@ -39,14 +39,14 @@ function Navbar() {
         display="flex"
         justifyContent="space-between"
         alignItems="center"
-     
+       
       >
-          <img
-                    src={Jklog}
-                    alt="not found"
-                    style={{ width: "60px", height: "50%" , cursor:"pointer"}}
-                    onClick={() => navigate(`/`)}
-                  />
+        <img
+          src={Jklog}
+          alt="not found"
+          style={{ width: "60px", height: "50%", cursor: "pointer" }}
+          onClick={() => navigate(`/`)}
+        />
         {/* <Box
           //onClick={() => navigate("/")}
           
@@ -60,18 +60,19 @@ function Navbar() {
           justifyContent="space-between"
           columnGap="20px"
           zIndex="2"
+       
         >
           {/* <IconButton sx={{ color: "black" }}>
+            <ShoppingList name={"hello"}/>
             <SearchOutlined />
           </IconButton>  */}
-           <IconButton sx={{ color: "black" }}>
+          <IconButton sx={{ color: "black" }}>
             <PersonOutline />
           </IconButton>
           <Badge
-        
             badgeContent={cart.length}
             color="secondary"
-           invisible={cart.length === 0}
+            invisible={cart.length === 0}
             sx={{
               "& .MuiBadge-badge": {
                 right: 5,
@@ -81,9 +82,9 @@ function Navbar() {
                 minWidth: "13px",
               },
             }}
-          > 
+          >
             <IconButton
-             onClick={() => dispatch(setIsCartOpen({}))}
+              onClick={() => dispatch(setIsCartOpen({}))}
               sx={{ color: "black" }}
             >
               <ShoppingBagOutlined />

@@ -29,7 +29,8 @@ const CartMenu = () => {
     return total + item.count * item.variants[0].price;
   }, 0);
 
-    console.log(cart.length,"cart")
+  console.log(cart, "this is cart");
+
   return (
     <Box
       display={isCartOpen ? "block" : "none"}
@@ -74,9 +75,7 @@ const CartMenu = () => {
                   </Box>
                   <Box flex="1 1 60%">
                     <FlexBox mb="5px">
-                      <Typography fontWeight="bold">
-                        {item.title}
-                      </Typography>
+                      <Typography fontWeight="bold">{item.title}</Typography>
                       <IconButton
                         onClick={() =>
                           dispatch(removeFromCart({ id: item.id }))

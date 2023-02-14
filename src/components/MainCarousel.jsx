@@ -1,10 +1,10 @@
-import { Box, Typography, IconButton, useMediaQuery } from "@mui/material";
+import { Box, IconButton, useMediaQuery } from "@mui/material";
+//import {Typography} from "@mui/material";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
-import { shades } from "../theme";
-
+//import { shades } from "../theme";
 
 // imports all images from assets folder
 const importAll = (r) =>
@@ -18,7 +18,7 @@ export const heroTextureImports = importAll(
 );
 
 const MainCarousel = () => {
-  const isNonMobile = useMediaQuery("(min-width:600px)");
+  //const isNonMobile = useMediaQuery("(min-width:600px)");
   return (
     <Carousel
       infiniteLoop={true}
@@ -63,12 +63,13 @@ const MainCarousel = () => {
             alt={`carousel-${index}`}
             style={{
               width: "100%",
-              height: "700px",
-              objectFit: "contain",
+              height: "800px",
+              marginTop:"50px",
+              objectFit: "cover",
               backgroundAttachment: "fixed",
             }}
           />
-          <Box
+          {/* <Box
             color="white"
             padding="20px"
             borderRadius="1px"
@@ -81,7 +82,7 @@ const MainCarousel = () => {
             margin={isNonMobile ? undefined : "0 auto"}
             maxWidth={isNonMobile ? undefined : "240px"}
           >
-            {/* <Typography color={shades.secondary[200]}>-- JKYOG</Typography>
+            <Typography color={shades.secondary[200]}>-- JKYOG</Typography>
             <Typography variant="h5">WELCOME</Typography>
             <Typography
               fontWeight="bold"
@@ -89,8 +90,8 @@ const MainCarousel = () => {
               sx={{ textDecoration: "underline" }}
             >
               Discover More
-            </Typography> */}
-          </Box>
+            </Typography>
+          </Box> */}
         </Box>
       ))}
     </Carousel>

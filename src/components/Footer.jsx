@@ -1,13 +1,14 @@
 import { useTheme } from "@emotion/react";
 import { Box, Typography } from "@mui/material";
 import { shades } from "../theme";
+import Link from "@mui/material";
 
 function Footer() {
   const {
     palette: { neutral },
   } = useTheme();
   return (
-    <Box marginTop="70px" padding="40px 0" backgroundColor={neutral.light} >
+    <Box marginTop="70px" padding="40px 0" backgroundColor={neutral.light}>
       <Box
         width="80%"
         margin="auto"
@@ -27,10 +28,13 @@ function Footer() {
             JKYOG
           </Typography>
           <div>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat
+            JKYog is a part of the worldwide mission envisioned by
+            Jagadguru Kripaluji Shree Maharaj, the 5th authentic 'Jagadguru',
+            spiritual master of the world. Shree Maharajji as he is lovingly
+            referred to by all his devotees, was one of the most endearing
+            divine personalities of the last 90 years who dedicated his entire
+            life for the service of humanity, especially for the spiritual
+            upliftment of the society.
           </div>
         </Box>
 
@@ -44,18 +48,17 @@ function Footer() {
           <Typography mb="30px">Privacy Policy</Typography>
         </Box>
 
-
         <Box width="clamp(20%, 25%, 30%)">
           <Typography variant="h4" fontWeight="bold" mb="30px">
             Contact Us
           </Typography>
           <Typography mb="30px">
-            50 north Whatever Blvd, Washington, DC 10501
+          Email: secretary@jkyog.org
           </Typography>
           <Typography mb="30px" sx={{ wordWrap: "break-word" }}>
-            Email: mredwardroh@gmail.com
+          Plano, Tx 75025 U.S
           </Typography>
-          <Typography mb="30px">(222)333-4444</Typography>
+          <Typography mb="30px">+1 (469) 795-9135</Typography>
         </Box>
       </Box>
     </Box>

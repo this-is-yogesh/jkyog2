@@ -24,4 +24,28 @@ app.use(
   })
 )
 
+app.use(
+  "/orders.json?status=any",
+  createProxyMiddleware({
+    target: "https://jkyoggiftshop.myshopify.com/admin/api/2023-01", //original url
+    changeOrigin: true,
+    //secure: false,
+    onProxyRes: function (proxyRes, req, res) {
+      proxyRes.headers["Access-Control-Allow-Origin"] = "*";
+    },
+  })
+)
+
+app.use(
+  "/orders/count.json?status=any",
+  createProxyMiddleware({
+    target: "https://jkyoggiftshop.myshopify.com/admin/api/2023-01", //original url
+    changeOrigin: true,
+    //secure: false,
+    onProxyRes: function (proxyRes, req, res) {
+      proxyRes.headers["Access-Control-Allow-Origin"] = "*";
+    },
+  })
+)
+
 app.listen(5000);
